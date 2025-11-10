@@ -1,0 +1,43 @@
+# 环境配置文件 - 生产环境
+# 数据库配置
+DB_HOST=10.1.31.12
+DB_PORT=13049
+DB_USER=root
+DB_PASSWORD=agent!1234
+DB_NAME=sci_agent_academic
+
+# LLM服务配置
+LLM_API_ENDPOINT=http://35.220.164.252:3888/v1
+LLM_API_KEY=sk-B52cka26mugEd4P3EEDyIvMU2jlEabH37wuHz30KNy7825SZ
+LLM_MODEL=deepseek-ai/DeepSeek-V3
+
+# JWT配置
+SECRET_KEY=prod-secret
+JWT_SECRET_KEY=sci_agent_academic
+JWT_EXPIRE_DAYS=30
+JWT_ALGORITHM=HS256
+
+# Rate limiting
+RATELIMIT_DEFAULT=200 per second
+RATELIMIT_GLOBAL=200 per second
+# Use Redis for production to avoid in-memory storage warnings
+RATELIMIT_STORAGE_URI=redis://127.0.0.1:6379/1
+# 需要注意限速的
+RATE_LIMIT_CHAT=20 per second
+
+# 服务配置
+APP_ENV=prod
+HOST=0.0.0.0
+PORT=4201
+DEBUG=False
+
+# 日志配置
+LOG_LEVEL=WARNING
+LOG_MAX_BYTES=10485760
+LOG_BACKUP_COUNT=30
+
+# CORS配置
+CORS_ORIGINS=*
+
+
+
